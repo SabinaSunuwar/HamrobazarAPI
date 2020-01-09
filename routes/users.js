@@ -32,7 +32,7 @@ router.post('/register', (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
-    User.findOne({ username: req.body.email })
+    User.findOne({ email: req.body.email })
         .then((user) => {
             if (user == null) {
                 let err = new Error('User not found!');
